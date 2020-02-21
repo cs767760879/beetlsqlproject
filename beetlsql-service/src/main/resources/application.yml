@@ -1,0 +1,22 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /api
+#  servlet:
+#    context-path: /booking
+beetlsql:
+  daoSuffix: Dao
+  basePackage: com.lianxun.dao
+
+spring:
+  application:
+    name: beetlsql-service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:test}?serverTimezone=UTC&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+    username: ${DB_USER:root}
+    password: ${DB_PASSWORD:root}
+    type: com.alibaba.druid.pool.DruidDataSource
+#logging.level.root=WARN
+#logging.level.org.springframework=DEBUG
+
